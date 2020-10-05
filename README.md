@@ -13,11 +13,14 @@ The protocol describes how data is pushed from any Xeed Agent to Insight Module
 * age: Data sequence within a single history ID. 
   * age = 1 => Header
 * end_age: End of age of the message (when not set, end_age = age par default)
-#### Use cases / Common agreements
+#### Data Consistency / Lifecycle
 * Strong Data Consistency: streaming data must start by age = 2 and without any gap during the whole life-cycle.
-  * Message File body: please leave enough age room for big file.
+  * Natural growing up garanteed (age by age)
+  * File Type Message body: please leave enough age room for big file.
   * For example: age = 100 and end_age = 1100 for a file of 500 MB ( *2 is a safe multiplificateur) 
-* Data lifecycle: A new message header with age = 1 and a newer start_seq indicates an end-of-life the old history
+  * Data lifecycle: A new message header with age = 1 and a newer start_seq indicates an end-of-life the old history
+* Weak Data Consistency: No age specified in the header
+  * 
 
 ### Message Body (json string)
 #### Definition
@@ -26,8 +29,7 @@ The protocol describes how data is pushed from any Xeed Agent to Insight Module
   * flat : plein-text
 * attribute 'data_format'
   * record : list of dictionary
-* attribute 'data_specification'
-  * standard :
-  * slt :
+* attribute 'data_specification': internal field definitions
+  * slt : Record Number = '_RECNO', Operation Type = 'IUUTOPERATFLAG', defalut operation = 'Insert'
 * attribute 'data' : data in the content
-* attribute '
+* attribute 'file' : file uri
