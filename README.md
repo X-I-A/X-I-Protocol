@@ -32,7 +32,7 @@ The protocol describes how data is pushed from any Xeed Agent to Insight Module
   * files : list of uri
   * path : all file under a path
   * paths : path list
-* attribute 'data_specification': internal fields definitions
+* attribute 'data_spec': internal fields definitions
   * slt : Record Number = '_RECNO', Operation Type = 'IUUTOPERATFLAG', defalut operation = 'Insert'
 ### Body
 * Content as is described in the header
