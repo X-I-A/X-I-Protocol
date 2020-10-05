@@ -10,4 +10,8 @@ The protocol describes how data is pushed from any Xeed Agent to Insight Module
 #### Definition
 * table_id: Source identification. (Unique per topic)
 * start_seq: Data Stream Hitory ID.
-*
+* age: Data sequence within a single history ID. 
+  * age = 1 => Header
+  * age = 2 => Initial Load
+#### Use case example
+* 
