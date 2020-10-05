@@ -6,3 +6,4 @@ This protocol defines the HTTP flow accepted by Xeed Http Agent. Xeed Http Agent
 * Kafka : /clusters/<cluster_name>/topics/<topic_name>
 * Google Cloud Platform: /projects/<project_name>/topics/<topic_name>
 ## HTTP Header definition
+The same as the message header of [X-I-Protocol](README.md)
