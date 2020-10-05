@@ -20,7 +20,7 @@ The protocol describes how data is pushed from any Xeed Agent to Insight Module
   * For example: age = 100 and end_age = 1100 for a file of 500 MB ( *2 is a safe multiplificateur) 
   * Data lifecycle: A new message header with age = 1 and a newer start_seq indicates an end-of-life the old history
 * Weak Data Consistency: No age specified in the header. Data operation is ordered by received time.
-#### Definition (2/2) : Data Code
+#### Definition (2/2) : Data Description
 * attribute 'data_encode'
   * b64g : base64-encoded gzipped content
   * flat : plein-text
