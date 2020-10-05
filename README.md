@@ -26,7 +26,7 @@ The protocol describes how data is pushed from any Xeed Agent to Insight Module
   * flat : plein-text
 * attribute 'data_format'
   * record : list of dictionary
-* attribute 'data_location'
+* attribute 'data_store'
   * body : message body
   * file : uri of single file
   * files : list of uri
