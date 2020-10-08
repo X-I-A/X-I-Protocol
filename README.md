@@ -28,13 +28,12 @@ The protocol describes how data is pushed from any Xeed Agent to Insight Module
   * b64g : base64-encoded gzipped char array 
   * flat : plein-text
 * attribute 'data_format'
-  * record : list of dictionary
+  * record : json - list of dictionary
+  * parquet : parquet file
 * attribute 'data_store'
   * body : message body
   * file : uri of single file
   * files : list of uri
-  * path : all file under a path
-  * paths : path list
 * attribute 'data_spec': internal fields definitions
   * slt : Record Number = '_RECNO', Operation Type = 'IUUTOPERATFLAG', defalut operation = 'Insert'
 ### Body
