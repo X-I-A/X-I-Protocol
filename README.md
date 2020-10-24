@@ -34,7 +34,6 @@ The protocol describes how data is pushed from any Xeed Agent to Insight Module
 * attribute 'data_store'
   * body : message body
   * file : uri of single file
-  * files : list of uri
 * attribute 'data_spec': header or body data standard
 ### Data
 * Data field type is described in the header
