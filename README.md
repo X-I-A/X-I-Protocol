@@ -36,9 +36,10 @@ The protocol describes how data is pushed from any Xeed Agent to Insight Module
   * file : uri of single file
   * files : list of uri
 * attribute 'data_spec': header or body data standard
-### Body
-* Standard Content as is described in the header
-* Standard internal fields might be added for each line:
+### Data
+* Data field type is described in the header
+* Here is the definition of the case of data_spec = 'xia' (Standard Data Type) 
+* Standard Data Body: internal fields might be added for each line:
   * '_AGE' : age value for strong data consistency
   * '_SEQ' : start_seq value for weak data consistency
   * '_NO' : The Sequence number of the data entries of the same merge key. Empty = Order is not important
