@@ -10,6 +10,7 @@ The protocol describes how data is pushed from any Xeed Agent to Insight Module
 #### Definition (1/2) : Identification
 * table_id: Source identification. (Unique per topic)
 * start_seq: Data Stream Hitory ID.
+* aged: True = Strong Data Consistency / False = Weak Data Consistency
 * age: Data sequence within a single history ID. 
   * age = 1 means the record contains header information
 * end_age: End of age of the message (when not set, end_age is considered equal to age)
@@ -35,6 +36,11 @@ The protocol describes how data is pushed from any Xeed Agent to Insight Module
   * file : uri of single file
   * files : list of uri
 * attribute 'data_spec': internal fields definitions
-  * slt : Record Number = '_RECNO', Operation Type = 'IUUTOPERATFLAG', defalut operation = 'Insert'
+  * xia : Merge Key = '_MGK', Record Number = '_NO', Operation Type = '_OP' 
+  * slt : Record Number = '_RECNO', Operation Type = 'IUUT_OPERAT_FLAG'
 ### Body
-* Content as is described in the header
+* Standard Content as is described in the header
+* Three standard internal fields will be added:
+  * '_MGK' : Merge Key. If aged == Ture, Merge Key = start_seq + age. If aged == False, Merge Key = start_seq
+  * '_NO' : The Sequence number of the data entries of the same merge key. Empty = Order is not important
+  * '_OP' : Operation Flag. 'U' = Update, 'D' = Delete. Empty = Insert
