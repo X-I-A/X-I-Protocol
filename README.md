@@ -35,12 +35,13 @@ The protocol describes how data is pushed from any Xeed Agent to Insight Module
   * body : message body
   * file : uri of single file
   * files : list of uri
-* attribute 'data_spec': internal fields definitions
+* attribute 'data_spec': fields standards
   * xia : Merge Key = '_MGK', Record Number = '_NO', Operation Type = '_OP' 
   * slt : Record Number = '_RECNO', Operation Type = 'IUUT_OPERAT_FLAG'
+  * ddic : SAP Netweaver based data type
 ### Body
 * Standard Content as is described in the header
-* Three standard internal fields will be added:
+* Three standard internal fields might be added:
   * '_MGK' : Merge Key. If aged == Ture, Merge Key = start_seq + age. If aged == False, Merge Key = start_seq
   * '_NO' : The Sequence number of the data entries of the same merge key. Empty = Order is not important
   * '_OP' : Operation Flag. 'U' = Update, 'D' = Delete. Empty = Insert
