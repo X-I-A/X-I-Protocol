@@ -42,4 +42,4 @@ The protocol describes how data is pushed from any Xeed Agent to Insight Module
   * '_AGE' : age value for strong data consistency
   * '_SEQ' : start_seq value for weak data consistency
   * '_NO' : The Sequence number of the data entries of the same merge key. Empty = Order is not important
-  * '_OP' : Operation Flag. 'I' = Insert, 'U' = Update, 'D' = Delete, Empty = Insert without _NO
+  * '_OP' : Operation Flag. 'I' = Insert, 'U' = Update, 'D' = Delete, Empty = Insert without a predefined Order (_NO)
