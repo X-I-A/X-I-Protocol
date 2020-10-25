@@ -37,7 +37,7 @@ The protocol describes how data is pushed from any Xeed Agent to Insight Module
 * attribute 'data_spec': header or body data standard
 ### Data
 * Data field type is described in the header
-* Here is the definition of the case of data_spec = 'xia' (Standard Data Type) 
+* Here is the definition of the case of data_spec = 'x-i-a' (Standard Data Type) 
 * Standard Data Body: internal fields might be added for each line:
   * '_AGE' : age value for strong data consistency
   * '_SEQ' : start_seq value for weak data consistency
