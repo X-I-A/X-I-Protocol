@@ -1,10 +1,14 @@
 # Xeed to Insight Communication Protocol
 ## Introduction
 The protocol describes how data is pushed from any Xeed to Insight flow and Insight to Agent flow.
+* Xeed Module can accept all encoder, format and data specification input flow
+* This protocol onlys talks about the Xeed Module's outflow
 ## Communication Channel / Limits
-* All the data is transfered by Message Service: Kafka, Google Pubsub, etc..
+* All the data is transfered by Message-like Service: Kafka, Google Pubsub, etc..
+* All data should be record format (json array)
 * Each message data body (after compression) shouldn't exceed 1MB.
-* The huge message should be sent by the use of message file body.
+* Big message can also be sent directly by files. Each file shouldn't handle more than 128 MB Raw data (before compression).
+* The above two sizing recommendations are used to meet the cloud based serverless architecture (Highly distributed small service end-point).
 ## Message Structure
 ### Header (key-value pairs)
 #### Definition (1/2) : Identification
