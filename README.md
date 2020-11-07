@@ -1,6 +1,6 @@
 # Xeed to Insight Communication Protocol
 ## Introduction
-The protocol describes how data is pushed from any Xeed Agent to Insight Module
+The protocol describes how data is pushed from any Xeed to Insight flow and Insight to Agent flow.
 ## Communication Channel / Limits
 * All the data is transfered by Message Service: Kafka, Google Pubsub, etc..
 * Each message data body (after compression) shouldn't exceed 1MB.
@@ -28,14 +28,14 @@ The protocol describes how data is pushed from any Xeed Agent to Insight Module
   * gzip : gzipped byte array
   * b64g : base64-encoded gzipped char array 
   * flat : plein-text
+  * blob : binary data
 * attribute 'data_format'
   * record : json - list of dictionary
-  * parquet : parquet file
 * attribute 'data_store'
   * body : message body
   * file : uri of single file
-* attribute 'data_spec': header or body data standard
-### Data
+* attribute 'data_spec': x-i-a
+### Data Spec x-i-a Body part
 * Data field type is described in the header
 * Here is the definition of the case of data_spec = 'x-i-a' (Standard Data Type) 
 * Standard Data Body: internal fields might be added for each line:
